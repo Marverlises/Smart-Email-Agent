@@ -11,7 +11,7 @@
 [![Outlook](https://img.shields.io/badge/Outlook-supported-0078D4?logo=microsoftoutlook&logoColor=white)](#支持范围)
 [![LLM API](https://img.shields.io/badge/LLM-OpenAI--compatible-6C5CE7)](#配置-llm-api)
 
-**[中文](#中文说明) · [English](#english-guide) · [Privacy](#privacy--data-flow) · [小红书文案](./XIAOHONGSHU.md)**
+**[中文](#中文说明) · [English](#english-guide) · [Privacy](#privacy--data-flow)**
 
 </div>
 
@@ -159,8 +159,7 @@ Smart-Email-Agent/
 ├── sidepanel.*            # 标签页独立的侧边栏界面
 ├── options.*              # LLM API 和生成偏好设置
 ├── PRIVACY.md             # 隐私与数据流说明
-├── TESTING.md             # 手工测试清单
-└── XIAOHONGSHU.md         # 可直接发布的小红书介绍文案
+└── TESTING.md             # 手工测试清单
 ```
 
 ### 本地验证
