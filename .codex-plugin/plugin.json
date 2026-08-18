@@ -1,0 +1,17 @@
+{
+  "name": "smart-email-reply",
+  "version": "0.4.4",
+  "description": "Native browser side-panel extension that reads the current Gmail or Outlook conversation history and generates selectable replies with a configurable LLM API.",
+  "author": {
+    "name": "Local developer"
+  },
+  "interface": {
+    "displayName": "Smart Email Reply",
+    "shortDescription": "Draft replies in an independent per-tab side panel.",
+    "longDescription": "Smart Email Reply runs in an independent tab-specific Chrome or Edge side panel, reads all messages loaded in the current Gmail or Outlook Web conversation (including outlook.cloud.microsoft), and generates selectable reply drafts from either the default task or the user's current custom prompt without mailbox OAuth.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": ["Independent per-tab side panels", "Custom prompt with conversation history", "Current conversation extraction", "Configurable LLM API"],
+    "defaultPrompt": "Help me install or configure Smart Email Reply."
+  }
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Email Reply</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand-row">
+        <div class="mark">SR</div>
+        <div class="brand-copy">
+          <h1>Smart Email Reply</h1>
+          <p>当前会话 AI 回复助手</p>
+        </div>
+        <button id="settings" class="icon-button" type="button" title="API 与生成设置">⚙</button>
+      </div>
+    </header>
+
+    <section class="conversation-card">
+      <div class="conversation-top">
+        <div>
+          <span id="platform" class="platform">等待识别</span>
+          <span id="count" class="count">0 条消息</span>
+        </div>
+        <button id="refresh" class="text-button" type="button">重新读取</button>
+      </div>
+      <div id="subject" class="subject">请在 Gmail 或 Outlook Web 打开一封邮件会话</div>
+      <div id="inspect-status" class="inspect-status" role="status">正在检查当前页面…</div>
+    </section>
+
+    <button id="generate" class="generate" type="button" disabled>
+      <span class="generate-icon">✦</span>
+      <span>根据全部历史生成回复</span>
+    </button>
+
+    <section class="custom-card" aria-labelledby="custom-title">
+      <div id="custom-title" class="custom-title">按我的提示生成</div>
+      <label class="custom-label" for="custom-prompt">当前要求</label>
+      <textarea id="custom-prompt" maxlength="2000" rows="4" placeholder="例如：结合过往对话，帮我用英文礼貌追问申请进度，并询问预计回复时间。"></textarea>
+      <div class="custom-bottom">
+        <span class="custom-hint">Ctrl + Enter 快速生成</span>
+        <button id="generate-custom" class="custom-generate" type="button" disabled>
+          <span>✦</span>
+          <span>根据提示生成</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="result" class="result" aria-live="polite">
+      <div class="empty">
+        <div class="empty-mark">✦</div>
+        <strong>回复建议会显示在这里</strong>
+        <p>生成前会尝试展开当前会话中折叠的历史消息。</p>
+      </div>
+    </section>
+
+    <footer>只读取当前页面 · 不访问邮箱 API · 不会自动发送</footer>
+  </main>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

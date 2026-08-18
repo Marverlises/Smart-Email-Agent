@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Email Reply",
+  "version": "0.4.4",
+  "description": "在浏览器原生侧边栏中读取当前 Gmail 或 Outlook 会话历史，并生成多条可选择的 AI 回复。",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA01yJi0KAjpQWPCBIez+ngsn0gQ+9CsBK1i05Ve46mvv3tluGkqFT+i1fR/w6ei3OBPcYqfBvFF2GZ2q4XhmmNP0EX1Z1F1uAH+syQbk0AhnI0w0bUgHQAphUMKDuMTthJaAptTJEejr523bbojtLJEzakacPtNFI99MfylPZRCkARUfZjqij1FGysA8c0SfI6/Y4aJyVDK8A5SQuoF7eY1cKG/Qspu2oFT1mDmBb2lwNuH+AI7PzTe3zE6fGxMT0wm0g8bPZ1mSb6BnuTfA8vQ/Ph6Y7VmP/gwfsnxWYpj/zEDACkJybsxxObLrvqzn0ixs22MGWINEKofB6+M5xKwIDAQAB",
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "storage"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "打开 Smart Email Reply 侧边栏"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.office.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.cloud.microsoft/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

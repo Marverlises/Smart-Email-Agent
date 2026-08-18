@@ -1,0 +1,74 @@
+:root {
+  font-family: Inter, "Segoe UI", "PingFang SC", Arial, sans-serif;
+  color: #182033;
+  background: #f5f7fc;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; background: #f5f7fc; }
+button { font: inherit; }
+
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.header { padding: 18px 16px 15px; background: #fff; border-bottom: 1px solid #e3e8f3; }
+.brand-row { display: flex; align-items: center; gap: 11px; }
+.mark { display: grid; place-items: center; width: 38px; height: 38px; flex: 0 0 auto; border-radius: 11px; color: #fff; background: linear-gradient(145deg,#315fdf,#2144ba); box-shadow: 0 7px 18px rgba(40,85,217,.24); font-size: 12px; font-weight: 850; }
+.brand-copy { min-width: 0; flex: 1; }
+.brand-copy h1 { margin: 0; font-size: 16px; line-height: 1.25; letter-spacing: -.015em; }
+.brand-copy p { margin: 3px 0 0; color: #727d94; font-size: 11px; }
+.icon-button { border: 0; border-radius: 8px; background: transparent; color: #66718a; padding: 7px; cursor: pointer; font-size: 17px; }
+.icon-button:hover { color: #25314c; background: #eff3fa; }
+
+.conversation-card { margin: 14px 14px 10px; padding: 13px; border: 1px solid #dfe5f1; border-radius: 13px; background: #fff; box-shadow: 0 4px 14px rgba(35,52,90,.04); }
+.conversation-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.platform, .count { display: inline-block; border-radius: 999px; padding: 3px 7px; font-size: 10px; font-weight: 750; }
+.platform { color: #2b51b7; background: #e9efff; }
+.platform.unsupported { color: #9a4a25; background: #fff0e7; }
+.count { margin-left: 4px; color: #52617e; background: #eef1f6; }
+.text-button { border: 0; background: transparent; color: #2855d9; padding: 4px; font-size: 11px; font-weight: 700; cursor: pointer; }
+.text-button:hover { text-decoration: underline; }
+.subject { margin-top: 10px; font-size: 13px; line-height: 1.45; font-weight: 760; overflow-wrap: anywhere; }
+.inspect-status { margin-top: 6px; color: #748098; font-size: 11px; line-height: 1.45; }
+.inspect-status.error { color: #a33232; }
+.inspect-status.success { color: #24704f; }
+
+.generate { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 14px 12px; border: 1px solid #2855d9; border-radius: 11px; color: #fff; background: #2855d9; padding: 11px 13px; font-size: 13px; font-weight: 800; cursor: pointer; box-shadow: 0 7px 18px rgba(40,85,217,.17); }
+.generate:hover:not(:disabled) { background: #2048bd; }
+.generate:disabled { opacity: .52; cursor: not-allowed; box-shadow: none; }
+.generate-icon { font-size: 16px; }
+
+.custom-card { margin: 0 14px 12px; padding: 13px; border: 1px solid #dbe3f2; border-radius: 13px; background: #fff; box-shadow: 0 4px 14px rgba(35,52,90,.04); }
+.custom-title { margin-bottom: 9px; color: #26334f; font-size: 13px; font-weight: 800; }
+.custom-label { display: block; margin-bottom: 6px; color: #66728a; font-size: 10px; font-weight: 750; }
+#custom-prompt { display: block; width: 100%; min-height: 82px; resize: vertical; border: 1px solid #cfd7e8; border-radius: 9px; outline: none; color: #263149; background: #fbfcff; padding: 9px 10px; font: inherit; font-size: 12px; line-height: 1.55; }
+#custom-prompt::placeholder { color: #99a2b5; }
+#custom-prompt:focus { border-color: #5273d7; box-shadow: 0 0 0 3px rgba(40,85,217,.1); background: #fff; }
+.custom-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 9px; }
+.custom-hint { color: #8a94a8; font-size: 9px; }
+.custom-generate { display: inline-flex; align-items: center; justify-content: center; gap: 5px; border: 1px solid #2855d9; border-radius: 8px; color: #2855d9; background: #f3f6ff; padding: 7px 10px; font-size: 11px; font-weight: 800; cursor: pointer; }
+.custom-generate:hover:not(:disabled) { color: #fff; background: #2855d9; }
+.custom-generate:disabled { opacity: .48; cursor: not-allowed; }
+
+.result { flex: 1; padding: 0 14px 16px; overflow: auto; }
+.empty { padding: 28px 16px; border: 1px dashed #cad3e6; border-radius: 13px; color: #69758e; background: rgba(255,255,255,.7); text-align: center; }
+.empty-mark { margin-bottom: 8px; color: #5273d7; font-size: 24px; }
+.empty strong { display: block; color: #48546f; font-size: 12px; }
+.empty p { margin: 6px 0 0; font-size: 11px; line-height: 1.55; }
+.loading { display: flex; align-items: center; justify-content: center; gap: 9px; padding: 36px 12px; color: #56627b; font-size: 12px; }
+.spinner { width: 18px; height: 18px; border: 2px solid #cfd7e8; border-top-color: #2855d9; border-radius: 50%; animation: spin .75s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.error { margin-bottom: 10px; padding: 11px 12px; border: 1px solid #ffd0cc; border-radius: 10px; color: #9f2d2d; background: #fff1f0; font-size: 11px; line-height: 1.55; }
+.card { margin-bottom: 11px; padding: 13px; border: 1px solid #dce3f2; border-radius: 13px; background: #fff; box-shadow: 0 4px 14px rgba(38,55,97,.05); }
+.card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.card-title { min-width: 0; flex: 1; font-size: 13px; font-weight: 800; }
+.tone { flex: 0 0 auto; border-radius: 999px; color: #53658e; background: #edf2ff; padding: 3px 7px; font-size: 10px; }
+.reply { max-height: 280px; overflow: auto; padding-right: 3px; color: #29334a; font-size: 12px; line-height: 1.65; white-space: pre-wrap; }
+.actions { display: flex; gap: 7px; margin-top: 12px; }
+.primary, .secondary { border-radius: 8px; padding: 7px 10px; font-size: 11px; font-weight: 750; cursor: pointer; }
+.primary { border: 1px solid #2855d9; color: #fff; background: #2855d9; }
+.secondary { border: 1px solid #cfd7e8; color: #35405a; background: #fff; }
+.primary:hover { background: #2048bd; }
+.secondary:hover { background: #f3f6fc; }
+.primary:disabled, .secondary:disabled { opacity: .55; cursor: wait; }
+
+footer { padding: 9px 12px; border-top: 1px solid #e1e6f1; color: #7a859a; background: #f0f3fa; text-align: center; font-size: 9px; line-height: 1.4; }
